@@ -104,6 +104,7 @@
         <div class="card">
 
 				<?php
+
 						if(isset($_POST['post-id'])){
 							$post_id = $_POST['post-id'];
 							?> 
@@ -112,6 +113,9 @@
 								<p>
 									The post title for the ID <?php echo $post_id ?> is: <i> <span id="id-numb"><?php echo get_the_title($post_id); ?></span></i>
 								</p>
+								<div>
+									<button onclick="results.refresh()" id="btn-2">Search other post</button>
+								</div>
 							</div>
 							<?php
 						}
@@ -124,7 +128,7 @@
 												<input type="text" id="post-id" name="post-id" value="<?php echo $post_id ?>">
 										</div>
 										<div>
-											<button onclick="search.show_results()" class="btn">Search</button>
+											<button onclick="results.refresh()" class="btn">Search other post</button>
 										</div>
 									</form>
 							</div>
